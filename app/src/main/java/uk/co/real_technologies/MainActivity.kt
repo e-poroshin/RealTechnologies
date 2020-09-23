@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity(), OnFragmentActionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
-        val isFirstVisit: Boolean = sharedPreferences.getBoolean(SAVED_STATE, false)
-        if (!isFirstVisit) {
+        val isLoggedIn: Boolean = sharedPreferences.getBoolean(SAVED_STATE, false)
+//        if (!isLoggedIn) {
             startActivity(Intent(this, StartActivity::class.java))
-            true.saveFirstVisit()
-        }
+            true.saveLogIn()
+//        }
         setContentView(R.layout.activity_main)
         onOpenOperationsFragment()
         bottomNavigationView = findViewById(R.id.bottom_navigation_view)
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), OnFragmentActionListener {
         })
     }
 
-    private fun Boolean.saveFirstVisit() {
+    private fun Boolean.saveLogIn() {
         val editor = sharedPreferences.edit()
         editor.putBoolean(SAVED_STATE, this)
         editor.apply()
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), OnFragmentActionListener {
             super.onBackPressed()
             finish()
         } else {
-            Toast.makeText(baseContext, R.string.backPressed_ru,
+            Toast.makeText(baseContext, R.string.backPressed,
                     Toast.LENGTH_SHORT).show()
             back_pressed = System.currentTimeMillis()
         }

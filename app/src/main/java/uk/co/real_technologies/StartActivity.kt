@@ -9,6 +9,7 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
-        findViewById<View>(R.id.buttonStart).setOnClickListener { finish() }
+        findViewById<View>(R.id.buttonSignIn).setOnClickListener { finish() }
+        findViewById<View>(R.id.buttonSignUp).setOnClickListener { finish() }
     }
 }

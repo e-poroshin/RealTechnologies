@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">Money Manager</string>
-    <string name="welcome_ru">Добро пожаловать!</string>
-    <string name="welcomeDescription_ru">Вы только что сделали первый шаг, чтобы привести в порядок вашу финансовую сферу. "\n" Давайте начнем!</string>
-    <string name="backPressed">Press once again to exit</string>
+    <string name="app_name">Real Technologies</string>
     <string name="operations">Operations</string>
     <string name="accounts">Accounts</string>
     <string name="categories">Categories</string>
     <string name="statistics">Statistics</string>
-    <string name="operations_ru">Операции</string>
-    <string name="accounts_ru">Счета</string>
-    <string name="categories_ru">Категории</string>
-    <string name="statistics_ru">Статистика</string>
-    <string name="backPressed_ru">Нажмите дважды для выхода из приложения</string>
-    <string name="press_plus_to_add_operation">Нажмите \" + \"\nдля добавления операции</string>
+    <string name="backPressed">Press once again to exit</string>
+    <string name="press_plus_to_add_operation">Press \" + \"\nto add operation</string>
+    <string name="balance">Balance</string>
+    <string name="all_categories">All categories</string>
+    <string name="all_operations">All operations</string>
+    <string name="expense_by_categories">Expense by categories</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">or</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

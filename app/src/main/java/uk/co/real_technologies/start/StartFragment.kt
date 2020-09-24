@@ -1,7 +1,6 @@
 package uk.co.real_technologies.start
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,14 +38,13 @@ class StartFragment : Fragment(), View.OnClickListener {
         for (id in buttonIDs) {
             view.findViewById<View>(id).setOnClickListener(this)
         }
-        Log.d("TAG1", "SignIn")
         return view
     }
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.buttonSignIn -> Log.d("TAG", "SignIn")
-            R.id.buttonSignUp -> Log.d("TAG", "SignUp")
+            R.id.buttonSignIn -> showToast("Sign In")
+            R.id.buttonSignUp -> showToast("Sign Up")
             R.id.button1 -> showToast("One")
             R.id.button2 -> showToast("Two")
             R.id.button3 -> showToast("Three")
@@ -66,6 +64,17 @@ class StartFragment : Fragment(), View.OnClickListener {
 
     private fun showToast(text: String) {
         Toast.makeText(requireActivity(), text, Toast.LENGTH_SHORT).show()
+    }
+
+    fun onOpenSignInFragment() {
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(
+                R.id.fragmentContainerStart,
+                StartFragment.newInstance(),
+                StartFragment::class.java.name
+            )
+            .commit()
     }
 
     companion object {

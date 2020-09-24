@@ -10,14 +10,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import uk.co.real_technologies.AddOperationActivity
+import uk.co.real_technologies.activities.AddOperationActivity
 import uk.co.real_technologies.R
 import uk.co.real_technologies.di.App
 import uk.co.real_technologies.fragments.FragmentCommunicator
-import uk.co.real_technologies.operations.OperationsFragment
 import uk.co.real_technologies.repo.database.AccountEntity
 import uk.co.real_technologies.repo.database.Operation
 import java.util.*
@@ -72,10 +70,10 @@ class OperationsFragment : Fragment() {
         recyclerView!!.layoutManager = LinearLayoutManager(activity)
         recyclerView!!.adapter = adapter
         viewModel.liveData.observe(viewLifecycleOwner, Observer { operations ->
-                this.operations = operations
-                operations?.let { adapter.setOperations(it) }
-                if (operations.isNotEmpty()) textViewPressPlus!!.visibility = View.GONE
-            })
+            this.operations = operations
+            operations?.let { adapter.setOperations(it) }
+            if (operations.isNotEmpty()) textViewPressPlus!!.visibility = View.GONE
+        })
     }
 
     companion object {

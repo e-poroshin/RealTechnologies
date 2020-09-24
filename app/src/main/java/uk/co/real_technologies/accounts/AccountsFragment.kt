@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import uk.co.real_technologies.AddAccountActivity
-import uk.co.real_technologies.EditAccountActivity
+import uk.co.real_technologies.activities.AddAccountActivity
+import uk.co.real_technologies.activities.EditAccountActivity
 import uk.co.real_technologies.R
 import uk.co.real_technologies.di.App
 import uk.co.real_technologies.fragments.FragmentCommunicator

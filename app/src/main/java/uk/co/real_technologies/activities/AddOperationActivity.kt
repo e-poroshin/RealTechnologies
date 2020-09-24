@@ -1,4 +1,4 @@
-package uk.co.real_technologies
+package uk.co.real_technologies.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import uk.co.real_technologies.R
 import uk.co.real_technologies.accounts.AccountsViewModel
 import uk.co.real_technologies.categories.CategoryViewModel
 import uk.co.real_technologies.operations.OperationType

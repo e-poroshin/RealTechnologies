@@ -1,6 +1,6 @@
 package uk.co.real_technologies.fragments
 
-interface OnFragmentActionListener {
+interface OnMainFragmentsActionListener {
     fun onOpenOperationsFragment()
     fun onOpenAccountsFragment()
     fun onOpenCategoriesFragment()

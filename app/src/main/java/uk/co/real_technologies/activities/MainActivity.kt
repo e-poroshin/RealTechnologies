@@ -1,4 +1,4 @@
-package uk.co.real_technologies
+package uk.co.real_technologies.activities
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import uk.co.real_technologies.accounts.AccountsFragment
 import uk.co.real_technologies.categories.CategoriesFragment
-import uk.co.real_technologies.fragments.OnFragmentActionListener
+import uk.co.real_technologies.fragments.OnMainFragmentsActionListener
 import uk.co.real_technologies.operations.OperationsFragment
 import uk.co.real_technologies.statistics.StatisticsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import uk.co.real_technologies.R
 
-class MainActivity : AppCompatActivity(), OnFragmentActionListener {
+class MainActivity : AppCompatActivity(), OnMainFragmentsActionListener {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var sharedPreferences: SharedPreferences
@@ -60,28 +61,28 @@ class MainActivity : AppCompatActivity(), OnFragmentActionListener {
     override fun onOpenOperationsFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, OperationsFragment.newInstance(), OperationsFragment::class.java.simpleName)
+                .replace(R.id.fragmentContainerMain, OperationsFragment.newInstance(), OperationsFragment::class.java.simpleName)
                 .commit()
     }
 
     override fun onOpenAccountsFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, AccountsFragment.newInstance(), AccountsFragment::class.java.simpleName)
+                .replace(R.id.fragmentContainerMain, AccountsFragment.newInstance(), AccountsFragment::class.java.simpleName)
                 .commit()
     }
 
     override fun onOpenCategoriesFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, CategoriesFragment.newInstance(), CategoriesFragment::class.java.simpleName)
+                .replace(R.id.fragmentContainerMain, CategoriesFragment.newInstance(), CategoriesFragment::class.java.simpleName)
                 .commit()
     }
 
     override fun onOpenStatisticsFragment() {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragmentContainer, StatisticsFragment.newInstance(), StatisticsFragment::class.java.simpleName)
+                .replace(R.id.fragmentContainerMain, StatisticsFragment.newInstance(), StatisticsFragment::class.java.simpleName)
                 .commit()
     }
 

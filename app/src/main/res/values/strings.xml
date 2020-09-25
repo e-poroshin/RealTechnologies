@@ -14,4 +14,5 @@
     <string name="or">or</string>
     <string name="sign_up">Sign Up</string>
     <string name="create_account">Create account</string>
+    <string name="password_requirement">At least 10 characters, 1 uppercase letter and 1 number</string>
 </resources>

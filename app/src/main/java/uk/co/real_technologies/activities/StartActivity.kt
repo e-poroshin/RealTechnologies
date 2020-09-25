@@ -3,10 +3,9 @@ package uk.co.real_technologies.activities
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import uk.co.real_technologies.R
-import uk.co.real_technologies.fragments.OnStartFragmentsActionListener
 import uk.co.real_technologies.start.StartFragment
 
-class StartActivity : AppCompatActivity(), OnStartFragmentsActionListener {
+class StartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,7 +13,7 @@ class StartActivity : AppCompatActivity(), OnStartFragmentsActionListener {
         onOpenStartFragment()
     }
 
-    override fun onOpenStartFragment() {
+    private fun onOpenStartFragment() {
         supportFragmentManager
             .beginTransaction()
             .replace(

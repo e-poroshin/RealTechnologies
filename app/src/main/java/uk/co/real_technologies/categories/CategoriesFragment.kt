@@ -14,7 +14,7 @@ import uk.co.real_technologies.di.App
 import uk.co.real_technologies.fragments.AddCategoryDialogFragment
 import uk.co.real_technologies.fragments.AddCategoryDialogFragment.EditNameDialogListener
 import uk.co.real_technologies.fragments.FragmentCommunicator
-import uk.co.real_technologies.fragments.OnMainFragmentsActionListener
+import uk.co.real_technologies.fragments.OnFragmentActionListener
 import uk.co.real_technologies.repo.database.AccountEntity
 import uk.co.real_technologies.repo.database.CategoryEntity
 import java.util.*
@@ -25,7 +25,7 @@ class CategoriesFragment : Fragment(), EditNameDialogListener {
     @Inject
     lateinit var viewModel: CategoryViewModel
 
-    private var onMainFragmentsActionListener: OnMainFragmentsActionListener? = null
+    private var onFragmentActionListener: OnFragmentActionListener? = null
     private var toolbar: Toolbar? = null
     private var recyclerView: RecyclerView? = null
     private var adapter: CategoriesAdapter? = null
@@ -38,8 +38,8 @@ class CategoriesFragment : Fragment(), EditNameDialogListener {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnMainFragmentsActionListener) {
-            onMainFragmentsActionListener = context
+        if (context is OnFragmentActionListener) {
+            onFragmentActionListener = context
         }
     }
 
@@ -84,8 +84,8 @@ class CategoriesFragment : Fragment(), EditNameDialogListener {
 
     override fun onFinishEditDialog(inputText: String?) {
         if (inputText != null) viewModel.insert(CategoryEntity(inputText))
-        if (onMainFragmentsActionListener != null) {
-            onMainFragmentsActionListener!!.onOpenCategoriesFragment()
+        if (onFragmentActionListener != null) {
+            onFragmentActionListener!!.onOpenCategoriesFragment()
         }
     }
 
@@ -107,7 +107,7 @@ class CategoriesFragment : Fragment(), EditNameDialogListener {
 
     override fun onDestroy() {
         super.onDestroy()
-        onMainFragmentsActionListener = null
+        onFragmentActionListener = null
     }
 
     companion object {

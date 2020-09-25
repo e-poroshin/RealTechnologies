@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import uk.co.real_technologies.R
 import uk.co.real_technologies.categories.CategoryViewModel
 import uk.co.real_technologies.di.App
-import uk.co.real_technologies.fragments.OnMainFragmentsActionListener
+import uk.co.real_technologies.fragments.OnFragmentActionListener
 import uk.co.real_technologies.operations.OperationType
 import uk.co.real_technologies.operations.OperationsViewModel
 import uk.co.real_technologies.repo.database.Operation
@@ -30,7 +30,7 @@ class StatisticsFragment : Fragment() {
     @Inject
     lateinit var viewModelOperation: OperationsViewModel
 
-    private var onMainFragmentsActionListener: OnMainFragmentsActionListener? = null
+    private var onFragmentActionListener: OnFragmentActionListener? = null
     private var toolbar: Toolbar? = null
     private var pieChart: PieChart? = null
     private var operations: List<Operation> = ArrayList()
@@ -38,8 +38,8 @@ class StatisticsFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnMainFragmentsActionListener) {
-            onMainFragmentsActionListener = context
+        if (context is OnFragmentActionListener) {
+            onFragmentActionListener = context
         }
     }
 
@@ -106,7 +106,7 @@ class StatisticsFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        onMainFragmentsActionListener = null
+        onFragmentActionListener = null
     }
 
     companion object {

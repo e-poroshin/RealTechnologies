@@ -8,13 +8,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import uk.co.real_technologies.accounts.AccountsFragment
 import uk.co.real_technologies.categories.CategoriesFragment
-import uk.co.real_technologies.fragments.OnMainFragmentsActionListener
+import uk.co.real_technologies.fragments.OnFragmentActionListener
 import uk.co.real_technologies.operations.OperationsFragment
 import uk.co.real_technologies.statistics.StatisticsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import uk.co.real_technologies.R
 
-class MainActivity : AppCompatActivity(), OnMainFragmentsActionListener {
+class MainActivity : AppCompatActivity(), OnFragmentActionListener {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var sharedPreferences: SharedPreferences
@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity(), OnMainFragmentsActionListener {
         sharedPreferences = getPreferences(Context.MODE_PRIVATE)
         val isLoggedIn: Boolean = sharedPreferences.getBoolean(SAVED_STATE, false)
 //        if (!isLoggedIn) {
-            startActivity(Intent(this, StartActivity::class.java))
-            true.saveLogIn()
+//            startActivity(Intent(this, StartActivity::class.java))
+//            true.saveLogIn()
 //        }
         setContentView(R.layout.activity_main)
         onOpenOperationsFragment()

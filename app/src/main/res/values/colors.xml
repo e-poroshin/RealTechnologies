@@ -9,6 +9,7 @@
     <color name="lightPrimaryColor">#D1C4E9</color>
     <color name="primaryText">#5CBA9B</color>
     <color name="secondaryText">#6A9990</color>
+    <color name="inactiveText">#416760</color>
     <color name="dividerColor">#BDBDBD</color>
     <color name="text_icons">#FFFFFF</color>
     <color name="operation_income">#65B663</color>

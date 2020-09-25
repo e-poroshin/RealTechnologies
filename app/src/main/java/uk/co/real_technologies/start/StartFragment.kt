@@ -43,7 +43,7 @@ class StartFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.buttonSignIn -> showToast("Sign In")
+            R.id.buttonSignIn -> openSignInFragment()
             R.id.buttonSignUp -> openSignUpFragment()
             R.id.button1 -> showToast("One")
             R.id.button2 -> showToast("Two")
@@ -64,6 +64,17 @@ class StartFragment : Fragment(), View.OnClickListener {
 
     private fun showToast(text: String) {
         Toast.makeText(requireActivity(), text, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun openSignInFragment() {
+        requireActivity().supportFragmentManager
+            .beginTransaction()
+            .replace(
+                R.id.fragmentContainerStart,
+                SignInFragment(),
+                SignInFragment::class.java.name
+            )
+            .commit()
     }
 
     private fun openSignUpFragment() {
